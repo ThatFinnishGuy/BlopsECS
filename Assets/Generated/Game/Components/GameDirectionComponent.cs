@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ColorComponent color { get { return (ColorComponent)GetComponent(GameComponentsLookup.Color); } }
-    public bool hasColor { get { return HasComponent(GameComponentsLookup.Color); } }
+    public DirectionComponent direction { get { return (DirectionComponent)GetComponent(GameComponentsLookup.Direction); } }
+    public bool hasDirection { get { return HasComponent(GameComponentsLookup.Direction); } }
 
-    public void AddColor(UnityEngine.Color newValue) {
-        var index = GameComponentsLookup.Color;
-        var component = (ColorComponent)CreateComponent(index, typeof(ColorComponent));
+    public void AddDirection(float newValue) {
+        var index = GameComponentsLookup.Direction;
+        var component = (DirectionComponent)CreateComponent(index, typeof(DirectionComponent));
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceColor(UnityEngine.Color newValue) {
-        var index = GameComponentsLookup.Color;
-        var component = (ColorComponent)CreateComponent(index, typeof(ColorComponent));
+    public void ReplaceDirection(float newValue) {
+        var index = GameComponentsLookup.Direction;
+        var component = (DirectionComponent)CreateComponent(index, typeof(DirectionComponent));
         component.value = newValue;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveColor() {
-        RemoveComponent(GameComponentsLookup.Color);
+    public void RemoveDirection() {
+        RemoveComponent(GameComponentsLookup.Direction);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherColor;
+    static Entitas.IMatcher<GameEntity> _matcherDirection;
 
-    public static Entitas.IMatcher<GameEntity> Color {
+    public static Entitas.IMatcher<GameEntity> Direction {
         get {
-            if (_matcherColor == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Color);
+            if (_matcherDirection == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Direction);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherColor = matcher;
+                _matcherDirection = matcher;
             }
 
-            return _matcherColor;
+            return _matcherDirection;
         }
     }
 }

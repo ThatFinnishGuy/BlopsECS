@@ -10,43 +10,49 @@ public static class GameComponentsLookup {
 
     public const int Asset = 0;
     public const int Board = 1;
-    public const int Color = 2;
-    public const int Destroyed = 3;
-    public const int DestroyedListener = 4;
-    public const int Interactive = 5;
-    public const int Movable = 6;
-    public const int Piece = 7;
-    public const int Position = 8;
-    public const int PositionListener = 9;
-    public const int View = 10;
+    public const int Destroyed = 2;
+    public const int DestroyedListener = 3;
+    public const int Direction = 4;
+    public const int DirectionListener = 5;
+    public const int Interactive = 6;
+    public const int Movable = 7;
+    public const int Piece = 8;
+    public const int Position = 9;
+    public const int PositionListener = 10;
+    public const int Shooter = 11;
+    public const int View = 12;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
         "Asset",
         "Board",
-        "Color",
         "Destroyed",
         "DestroyedListener",
+        "Direction",
+        "DirectionListener",
         "Interactive",
         "Movable",
         "Piece",
         "Position",
         "PositionListener",
+        "Shooter",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(AssetComponent),
         typeof(BoardComponent),
-        typeof(ColorComponent),
         typeof(DestroyedComponent),
         typeof(DestroyedListenerComponent),
+        typeof(DirectionComponent),
+        typeof(DirectionListenerComponent),
         typeof(InteractiveComponent),
         typeof(MovableComponent),
         typeof(PieceComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
+        typeof(ShooterComponent),
         typeof(ViewComponent)
     };
 }

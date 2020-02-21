@@ -17,14 +17,18 @@ public sealed class BoardSystem : ReactiveSystem<GameEntity>, IInitializeSystem
         var entity = _contexts.game.CreateEntity();
         var boardSize = _contexts.config.gameConfig.value.boardSize;
         entity.AddBoard(boardSize);
+        var shooterPosition = _contexts.config.gameConfig.value.shooterPosition;
 
         for (int y = 0; y < boardSize.y; y++)
         {
             for (int x = 0; x < boardSize.x; x++)
             {
-                _contexts.game.CreateRandomPiece(x, y);
+                _contexts.game.CreateRandomPiece(x, y, 0);
             }
         }
+
+        _contexts.game.CreateShooter(shooterPosition.x, shooterPosition.y , 5);
+        _contexts.game.CreateRandomPiece(shooterPosition.x, shooterPosition.y, 0);
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)

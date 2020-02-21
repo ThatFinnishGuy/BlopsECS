@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beabcaf6044118644ac2701aadcc2426, type: 3}
   m_Name: Game Config
   m_EditorClassIdentifier: 
-  _boardSize: {x: 6, y: 3}
+  _boardSize: {x: 6, y: 6}
+  _shooterPosition: {x: 3, y: -8}
   _rowSpawnTimer: 10

@@ -18,7 +18,7 @@ public partial class Contexts
     }
 }
 
-public static class ContextsExtensions
+public static class PieceContextsExtensions
 {
     public static GameEntity GetPieceWithPosition(this GameContext context, Vector2Int value)
     {

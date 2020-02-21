@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
+
 public class PieceView : View
 {
     public SpriteRenderer sprite;

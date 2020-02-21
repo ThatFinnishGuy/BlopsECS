@@ -5,5 +5,6 @@ using UnityEngine;
 public interface IGameConfig
 {
     Vector2Int boardSize { get; }
+    Vector2Int shooterPosition { get; }
     uint rowSpawnTimer { get; }
 }
